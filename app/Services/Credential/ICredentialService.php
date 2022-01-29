@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Services\Credential;
+
+use Illuminate\Contracts\Pagination\Paginator;
+
+interface ICredentialService
+{
+    /**
+     * Return paginated list of credentials from database.
+     */
+    public function index(): Paginator;
+
+    /**
+     * Return paginated list of credentials from database that match the search parameter.
+     */
+    public function search(string $titleSearch): Paginator;
+
+    /**
+     * @throws Exception If insert unexpectly returns false
+     */
+    public function store(array $entityData): void;
+
+    /**
+     * @throws Exception If update unexpectly returns false
+     */
+    public function update(int $entityId, array $updatePayload): void;
+
+    /**
+     * @throws Exception If delete unexpectly returns false
+     */
+    public function destroy(int $entityId): void;
+}
