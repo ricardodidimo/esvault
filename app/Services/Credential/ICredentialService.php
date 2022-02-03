@@ -17,6 +17,11 @@ interface ICredentialService
     public function search(string $titleSearch): Paginator;
 
     /**
+     * Return a credential following presentation necessities
+     */
+    public function show(object $credential): object;
+
+    /**
      * @throws Exception If insert unexpectly returns false
      */
     public function store(array $entityData): void;
