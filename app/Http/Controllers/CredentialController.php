@@ -31,6 +31,7 @@ class CredentialController extends Controller
     public function show(int $id, CredentialBaseRequest $request): JsonResponse
     {
         $data = $request->getRetrievedCredentialInstance();
+        $data = $this->credentialService->show($data);
 
         $successResponse = APIResponse::formatJSONPayload('success', $data);
         return response()->json($successResponse, 200);
