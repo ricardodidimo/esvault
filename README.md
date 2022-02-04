@@ -5,13 +5,13 @@
     <ul>
     <li>Database using migrations system; interactions made with Eloquent ORM. </li>
     <li>SPA authentication uses Sanctum, involves confirmation mailing and laravel queues for such.</li>
-    <li>A TDD approach was taken for the API development with help from PHPUnit framework.</li>
-    <li>PHPCS linter took action to ensure PSR12 compliance.</li>
+    <li>A TDD approach was taken for the API development with help from PHPUnit testing framework.</li>
+    <li>PHPCS linter took action to ensure PSR12 code style compliance.</li>
     </ul>
     <h3> 🟢 This made use of Javascript ES6+ & VueJS 2 along with its conventions and ecosystem</h3>
     <ul>
-    <li>Uses Vuex and stores to handle global non-ambiguous states such as authentication.</li>
+    <li>Uses Vuex and stores to handle application state.</li>
     <li>Uses Axios to make AJAX requests to API.</li>
-    <li>Uses Bootstrap CSS framework.</li>
+    <li>Uses Bootstrap CSS framework for interface design.</li>
     </ul>
     
