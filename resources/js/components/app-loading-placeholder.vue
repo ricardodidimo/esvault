@@ -1,26 +1,16 @@
 <style scoped>
-.loading-container {
-  color: var(--app-orange);
-  font-weight: bolder;
-
+.loading__container{
+  color: var(--app-blue);
+  font-family: var(--app-action-font);
 }
 
-.loading-border{
-  border: 1px solid var(--app-orange);
-}
-
-.loading-border > p{
-  margin: 0px;
-}
-
-.loading-box {
-  width: 15px;
-  height: 15px;
+.loading__box {
+  width: 30px;
+  height: 30px;
   animation: example 3s infinite;
-  background-color: var(--app-orange);
+  background-color: var(--app-blue);
   border-radius: 10%;
 }
-
 @keyframes example {
   0% {
     transform: rotate(20deg);
@@ -41,16 +31,12 @@
 </style>
 
 <template>
-  <div class="
-      w-100 
-      loading-container
-      d-flex 
-      justify-content-center 
-      align-items-center
-    ">
-    <div class="loading-border d-flex justify-content-center align-items-center">
+  <div class="fs-4">
+    <div
+      class="loading__container d-flex justify-content-center align-items-center"
+    >
+      <div class="loading__box me-3"></div>
       <p class="px-3">Loading...</p>
-      <div class="loading-box me-3"></div>
     </div>
   </div>
 </template>
