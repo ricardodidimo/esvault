@@ -1,4 +1,5 @@
 window._ = require('lodash');
+import app from "./app.js";
 
 try {
     require('bootstrap');
@@ -14,6 +15,27 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.axios.defaults.withCredentials = true;
+
+/**
+ * Correction 'middleware' for expired or abruptly deleted session which makes
+ * the application incorrectly identify user as authenticated.
+ */
+window.axios.interceptors.response.use(function (response) {
+    return response;
+  }, function (error) {
+    const response = error.response;
+    const isSeeAsAuth = app.$store.state.user.isAuth;
+    if (
+        (response.status === 401 ||
+        (response.status === 500 && response.data.data === 'CSRF token mismatch.')) && 
+        isSeeAsAuth
+    ) {
+        app.$store.commit('deprecateUser');
+        app.$router.push({name: 'account-login'});
+    }
+    return Promise.reject(error);
+  });
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
