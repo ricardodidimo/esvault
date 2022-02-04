@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 
 class EmailVerifyController extends Controller
 {
+    private string $postConfirmationRedirectRoute = "/account/verified";
+
     public function isVerified(Request $request): JsonResponse
     {
         $isVerified = $request->user()->hasVerifiedEmail();
@@ -44,6 +46,6 @@ class EmailVerifyController extends Controller
             event(new Verified($request->user()));
         }
 
-        return redirect('/credentials');
+        return redirect($this->postConfirmationRedirectRoute);
     }
 }

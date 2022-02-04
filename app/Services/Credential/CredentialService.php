@@ -6,9 +6,11 @@ use App\Models\Credential;
 use Exception;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\Paginator as PaginationPaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\This;
 
 class CredentialService implements ICredentialService
 {
@@ -62,6 +64,13 @@ class CredentialService implements ICredentialService
 
         $this->decryptClaims($credentialRecordsMatches);
         return $credentialRecordsMatches;
+    }
+
+    public function show(object $credential): object
+    {
+        $paginatedCredential = new PaginationPaginator([$credential], 1);
+        $this->decryptClaims($paginatedCredential);
+        return $credential;
     }
 
     public function store(array $recordInsertData): void

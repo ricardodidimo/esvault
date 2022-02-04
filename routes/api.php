@@ -40,6 +40,11 @@ Route::middleware('auth:sanctum')->group(function () {
         [AccountController::class, 'index']
     )->name('account.index');
 
+    Route::post(
+        '/account/confirmation',
+        [AccountController::class, 'confirm']
+    )->name('account.confirm');
+
     Route::delete(
         '/account',
         [AccountController::class, 'destroy']
