@@ -1,13 +1,15 @@
-import Home from './views/home-root.vue';
+import Home from "./views/home.vue";
 
-import Register from './views/register-auth.vue';
-import Login from './views/login-auth.vue';
-import VerifyEmail from './views/verify-email-auth.vue';
-import Account from './views/index-account.vue';
+import Account from "./views/account/index.vue";
+import Register from "./views/account/register.vue";
+import Login from "./views/account/login.vue";
+import VerifyEmail from "./views/account/verify-email.vue";
+import VerifiedEmail from "./views/account/verified-message.vue";
+import ConfirmDelete from "./views/account/confirm-delete.vue";
 
-import CreateCredentials from './views/create-credentials.vue';
-import Index from './views/index-credentials.vue';
-import Show from './views/show-credentials.vue';
+import CredentialsIndex from "./views/credentials/index.vue";
+import CredentialsCreate from "./views/credentials/create.vue";
+import CredentialView from "./views/credentials/view.vue";
 
 export const routes = [
     {
@@ -16,38 +18,49 @@ export const routes = [
         component: Home
     },
     {
-        name: 'register',
-        path: '/auth/register',
-        component: Register
-    },
-    {
-        name: 'verify-email',
-        path: '/auth/verify',
-        component: VerifyEmail
-    },
-    {
-        name: 'account',
-        path: '/auth/account',
+        name: 'account-index',
+        path: '/account/',
         component: Account
     },
     {
-        name: 'login',
-        path: '/auth/login',
+        name: 'account-register',
+        path: '/account/register',
+        component: Register
+    },
+    {
+        name: 'account-login',
+        path: '/account/login',
         component: Login
     },
     {
-        name: 'create-credentials',
+        name: 'account-verify',
+        path: '/account/verify',
+        component: VerifyEmail
+    },
+    {
+        name: 'account-verified',
+        path: '/account/verified',
+        component: VerifiedEmail
+    },
+    {
+        name: 'account-confirm',
+        path: '/account/confirm',
+        component: ConfirmDelete
+    },
+    {
+        name: 'credentials-index',
+        path: '/credentials/',
+        component: CredentialsIndex
+    },
+    {
+        name: 'credentials-create',
         path: '/credentials/create',
-        component: CreateCredentials
+        component: CredentialsCreate
     },
     {
-        name: 'index-credentials',
-        path: '/credentials',
-        component: Index
-    },
-    {
-        name: 'show-credentials',
-        path: '/credentials/show',
-        component: Show
+        name: 'credentials-view',
+        path: '/credentials/view/:credentialId',
+        component: CredentialView
     }
+
 ];
