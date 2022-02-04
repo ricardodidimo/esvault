@@ -32,9 +32,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (config('app.env') === 'production') {
+        /*if (config('app.env') === 'production') {
             URL::forceScheme('https');
-        }
+        }*/
 
         DB::listen(function ($query) {
             Log::debug(
