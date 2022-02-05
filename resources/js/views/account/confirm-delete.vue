@@ -24,7 +24,7 @@
       <AppCard cardTitle="Delete" class="mb-3">
         {{ headText }}
       </AppCard>
-      <AppForm v-on:submiting="deleteAccountSubmit" class="form-body__container">
+      <AppForm class="form-body__container" v-on:submiting="deleteAccountSubmit">
         <div class="form-group mb-2">
           <label for="current_password">Type your current password</label>
           <input
@@ -81,8 +81,10 @@ export default {
       const confirmPayload = formComponent.getFormData();
       try {
         await axios.get("/sanctum/csrf-cookie");
-        await axios.post("/api/account/confirmation", confirmPayload);
-        return true;
+        const confirmResponse = await axios.post("/api/account/confirmation", confirmPayload);
+        if (confirmResponse.status === 204) {
+          return true;
+        }
       } catch (e) {
         const confirmResponse = e.response;
         if (confirmResponse.status === 400) {
@@ -90,13 +92,12 @@ export default {
           this.validationErrors.current_password =
             validationErrorsObject.current_password;
         }
-        return false;
-      } finally {
         formComponent.setToBeginState();
+        return false;
       }
     },
     deleteAccountSubmit: async function (form) {
-      if (this.confirmUserPassword(form) === false) {
+      if (await this.confirmUserPassword(form) === false) {
         return;
       }
 
