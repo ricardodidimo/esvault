@@ -67,7 +67,7 @@ const store = {
             }
 
             if (context.state.user.isAuth === false) {
-                window.location.href = 'https://xvault-app.herokuapp.com/account/login';
+                window.location.href = 'example.net';
                 return;
             }
 
