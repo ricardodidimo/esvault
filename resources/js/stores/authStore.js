@@ -67,15 +67,8 @@ const store = {
             }
 
             if (context.state.user.isAuth === false) {
-                let locationRef = window.location.href;
-                const redirectRef = '/account/login/';
-            
-                locationRef = locationRef.replace(/http/i, 'https');
-                const domainEndIndex = locationRef.indexOf('/', 8);
-                locationRef = locationRef.substring(0, domainEndIndex);
-                locationRef = locationRef + redirectRef;
-                console.log(locationRef);
-                window.location.replace(locationRef);
+
+                window.location.replace('redirect/testing');
                 return;
             }
 
