@@ -6484,12 +6484,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     search: function search(formElement) {
       var titleParam = formElement.target.elements[0].value;
-      var searchUrl = "/api/credentials/" + titleParam;
-      this.$emit('requireSearch', searchUrl);
+      var searchUrl = titleParam === "" ? "/api/credentials" : "/api/credentials/" + titleParam;
+      this.$emit("requireSearch", searchUrl);
     }
   }
 });
@@ -14504,7 +14513,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.search__input[data-v-07006b01] {\n    background-color: unset;\n    border: none;\n    border-bottom: 1px solid black;\n}\n.search__btn[data-v-07006b01] {\n    background-color: black;\n    color: white;\n    border-radius: 0 0.5rem 0.5rem 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.search__input[data-v-07006b01] {\n  background-color: unset;\n  border: none;\n  border-bottom: 1px solid black;\n}\n.search__btn[data-v-07006b01] {\n  background-color: black;\n  color: white;\n  border-radius: 0 0.5rem 0.5rem 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
