@@ -10,7 +10,6 @@ use App\Services\User\IUserService;
 use App\Services\User\UserService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -32,10 +31,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->environment('production')) {
-            URL::forceScheme('https');
-        }
-
         DB::listen(function ($query) {
             Log::debug(
                 'ELOQUENT QUERY TRIGGERED',
