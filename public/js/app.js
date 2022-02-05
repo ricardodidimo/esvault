@@ -9095,7 +9095,7 @@ var store = {
                   break;
                 }
 
-                window.location.replace('redirect/testing');
+                window.location.replace('https://xvault-app.herokuapp.com/account/login');
                 return _context3.abrupt("return");
 
               case 6:

@@ -68,7 +68,7 @@ const store = {
 
             if (context.state.user.isAuth === false) {
 
-                window.location.replace('redirect/testing');
+                window.location.replace('https://xvault-app.herokuapp.com/account/login');
                 return;
             }
 
