@@ -58,7 +58,7 @@ const store = {
             }
 
             if (context.state.user.isGuest === false) {
-                window.location.replace("/credentials/");
+                app.$router.push({name: 'credentials-index'});
                 return;
             }
             return true;
@@ -82,7 +82,7 @@ const store = {
             }
 
             if (context.state.user.isVerified === false) {
-                window.location.replace("/account/verify/");
+                app.$router.push({name: 'account-verify'});
                 return;
             }
             return true;
@@ -94,7 +94,7 @@ const store = {
             }
 
             if (context.state.user.isVerified != false) {
-                window.location.replace("/credentials/");
+                app.$router.push({name: 'credentials-index'});
                 return;
             }
             return true;

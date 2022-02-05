@@ -9063,7 +9063,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/credentials/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'credentials-index'
+                });
                 return _context2.abrupt("return");
 
               case 6:
@@ -9133,7 +9135,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/account/verify/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'account-verify'
+                });
                 return _context4.abrupt("return");
 
               case 6:
@@ -9167,7 +9171,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/credentials/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'credentials-index'
+                });
                 return _context5.abrupt("return");
 
               case 6:
