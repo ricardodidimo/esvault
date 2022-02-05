@@ -26,7 +26,8 @@ const store = {
                 return;
             }
             try {
-                const response = await axios.get("/api/account");
+                
+                const response = await axios.get("https://xvault-app.herokuapp.com/api/account");
                 if (response.status === 200) {
                     const retrievedUser = response.data.data;
                     const populateData = {
