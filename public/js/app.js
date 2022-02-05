@@ -8995,7 +8995,7 @@ var store = {
               case 2:
                 _context.prev = 2;
                 _context.next = 5;
-                return axios.get("https://xvault-app.herokuapp.com/api/account");
+                return axios.get("/api/account");
 
               case 5:
                 response = _context.sent;
