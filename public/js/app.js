@@ -6998,7 +6998,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     confirmUserPassword: function () {
       var _confirmUserPassword = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(formComponent) {
-        var confirmPayload, confirmResponse, validationErrorsObject;
+        var confirmPayload, confirmResponse, _confirmResponse, validationErrorsObject;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -7014,31 +7015,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.post("/api/account/confirmation", confirmPayload);
 
               case 7:
+                confirmResponse = _context2.sent;
+
+                if (!(confirmResponse.status === 204)) {
+                  _context2.next = 10;
+                  break;
+                }
+
                 return _context2.abrupt("return", true);
 
               case 10:
-                _context2.prev = 10;
-                _context2.t0 = _context2["catch"](2);
-                confirmResponse = _context2.t0.response;
+                _context2.next = 18;
+                break;
 
-                if (confirmResponse.status === 400) {
-                  validationErrorsObject = confirmResponse.data.data;
+              case 12:
+                _context2.prev = 12;
+                _context2.t0 = _context2["catch"](2);
+                _confirmResponse = _context2.t0.response;
+
+                if (_confirmResponse.status === 400) {
+                  validationErrorsObject = _confirmResponse.data.data;
                   this.validationErrors.current_password = validationErrorsObject.current_password;
                 }
 
-                return _context2.abrupt("return", false);
-
-              case 15:
-                _context2.prev = 15;
                 formComponent.setToBeginState();
-                return _context2.finish(15);
+                return _context2.abrupt("return", false);
 
               case 18:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[2, 10, 15, 18]]);
+        }, _callee2, this, [[2, 12]]);
       }));
 
       function confirmUserPassword(_x) {
@@ -7054,25 +7062,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                if (!(this.confirmUserPassword(form) === false)) {
-                  _context3.next = 2;
+                _context3.next = 2;
+                return this.confirmUserPassword(form);
+
+              case 2:
+                _context3.t0 = _context3.sent;
+
+                if (!(_context3.t0 === false)) {
+                  _context3.next = 5;
                   break;
                 }
 
                 return _context3.abrupt("return");
 
-              case 2:
+              case 5:
                 this.$emit("needs-loading");
-                _context3.prev = 3;
-                _context3.next = 6;
+                _context3.prev = 6;
+                _context3.next = 9;
                 return axios.get("/sanctum/csrf-cookie");
 
-              case 6:
+              case 9:
                 preRequest = _context3.sent;
-                _context3.next = 9;
+                _context3.next = 12;
                 return axios["delete"]("/api/users");
 
-              case 9:
+              case 12:
                 response = _context3.sent;
 
                 if (response.status === 204) {
@@ -7082,19 +7096,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   });
                 }
 
-                _context3.next = 15;
+                _context3.next = 18;
                 break;
 
-              case 13:
-                _context3.prev = 13;
-                _context3.t0 = _context3["catch"](3);
+              case 16:
+                _context3.prev = 16;
+                _context3.t1 = _context3["catch"](6);
 
-              case 15:
+              case 18:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, this, [[3, 13]]);
+        }, _callee3, this, [[6, 16]]);
       }));
 
       function deleteAccountSubmit(_x2) {
@@ -8743,12 +8757,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return _this.$store.dispatch('checkUserState');
+              return _this.$store.dispatch("checkForGuest");
 
             case 2:
+              _context.t0 = _context.sent;
+
+              if (!(_context.t0 != true)) {
+                _context.next = 5;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 5:
               _this.$emit("component-ready");
 
-            case 3:
+            case 6:
             case "end":
               return _context.stop();
           }

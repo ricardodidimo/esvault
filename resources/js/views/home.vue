@@ -80,7 +80,9 @@ export default {
     AppPrimaryButton,
   },
   async mounted() {
-    await this.$store.dispatch('checkUserState');
+    if ((await this.$store.dispatch("checkForGuest")) != true) {
+      return;
+    }
     this.$emit("component-ready");
   },
 };
