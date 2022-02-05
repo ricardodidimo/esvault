@@ -65,12 +65,12 @@ return [
 
         'mysql_testing' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE_TESTING', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => null,
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'database' => 'podat_test',
+            'username' => 'root',
+            'password' => env('DB_TESTING_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
