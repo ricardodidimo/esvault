@@ -149,7 +149,7 @@ export default {
     isCallWithoutValueChange: function (formComponent) {
       const rawFormData = formComponent.getFormData();
       this.updatePayload = this.getValidInput(rawFormData);
-      console.log(this.updatePayload);
+
       if (this.isValidUpdate(this.updatePayload) === false) {
         formComponent.setSuccessfulSubmitMessage(
           "No alteration was made or current password not given."
