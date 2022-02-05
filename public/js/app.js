@@ -9092,7 +9092,7 @@ var store = {
 
               case 3:
                 if (!(context.state.user.isAuth === false)) {
-                  _context3.next = 12;
+                  _context3.next = 13;
                   break;
                 }
 
@@ -9102,13 +9102,14 @@ var store = {
                 domainEndIndex = locationRef.indexOf('/', 8);
                 locationRef = locationRef.substring(0, domainEndIndex);
                 locationRef = locationRef + redirectRef;
+                console.log(locationRef);
                 window.location.replace(locationRef);
                 return _context3.abrupt("return");
 
-              case 12:
+              case 13:
                 return _context3.abrupt("return", true);
 
-              case 13:
+              case 14:
               case "end":
                 return _context3.stop();
             }

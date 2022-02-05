@@ -74,6 +74,7 @@ const store = {
                 const domainEndIndex = locationRef.indexOf('/', 8);
                 locationRef = locationRef.substring(0, domainEndIndex);
                 locationRef = locationRef + redirectRef;
+                console.log(locationRef);
                 window.location.replace(locationRef);
                 return;
             }
