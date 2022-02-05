@@ -1,3 +1,5 @@
+import app from "../app";
+
 const store = {
     state: {
         user: {
@@ -24,6 +26,7 @@ const store = {
                 return;
             }
             try {
+                
                 const response = await axios.get("/api/account");
                 if (response.status === 200) {
                     const retrievedUser = response.data.data;
@@ -56,7 +59,7 @@ const store = {
             }
 
             if (context.state.user.isGuest === false) {
-                window.location.replace("/credentials/");
+                app.$router.push({name: 'credentials-index'});
                 return;
             }
             return true;
@@ -67,7 +70,7 @@ const store = {
             }
 
             if (context.state.user.isAuth === false) {
-                window.location.replace("/account/login/");
+                app.$router.push({name: 'account-login'});
                 return;
             }
 
@@ -80,7 +83,7 @@ const store = {
             }
 
             if (context.state.user.isVerified === false) {
-                window.location.replace("/account/verify/");
+                app.$router.push({name: 'account-verify'});
                 return;
             }
             return true;
@@ -92,7 +95,7 @@ const store = {
             }
 
             if (context.state.user.isVerified != false) {
-                window.location.replace("/credentials/");
+                app.$router.push({name: 'credentials-index'});
                 return;
             }
             return true;
