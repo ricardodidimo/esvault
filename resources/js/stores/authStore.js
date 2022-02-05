@@ -65,13 +65,19 @@ const store = {
             if (context.state.user.isOutdated) {
                 await context.dispatch('checkUserState');
             }
-            console.log('log test 1');
+
             if (context.state.user.isAuth === false) {
-                window.location.href = 'example.net';
-                console.log('log test 2');
+                let locationRef = window.location.href;
+                const redirectRef = '/account/login/';
+            
+                locationRef = locationRef.replace(/http/i, 'https');
+                const domainEndIndex = locationRef.indexOf('/', 8);
+                locationRef = locationRef.substring(0, domainEndIndex);
+                locationRef = locationRef + redirectRef;
+                window.location.replace(locationRef);
                 return;
             }
-            console.log('log test 3');
+
             return true;
         },
         async checkForVerifiedUser(context) {

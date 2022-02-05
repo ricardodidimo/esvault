@@ -9077,6 +9077,7 @@ var store = {
     },
     checkForAuthenticated: function checkForAuthenticated(context) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var locationRef, redirectRef, domainEndIndex;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
@@ -9091,17 +9092,23 @@ var store = {
 
               case 3:
                 if (!(context.state.user.isAuth === false)) {
-                  _context3.next = 6;
+                  _context3.next = 12;
                   break;
                 }
 
-                window.location.replace("/account/login/");
+                locationRef = window.location.href;
+                redirectRef = '/account/login/';
+                locationRef = locationRef.replace(/http/i, 'https');
+                domainEndIndex = locationRef.indexOf('/', 8);
+                locationRef = locationRef.substring(0, domainEndIndex);
+                locationRef = locationRef + redirectRef;
+                window.location.replace(locationRef);
                 return _context3.abrupt("return");
 
-              case 6:
+              case 12:
                 return _context3.abrupt("return", true);
 
-              case 7:
+              case 13:
               case "end":
                 return _context3.stop();
             }
