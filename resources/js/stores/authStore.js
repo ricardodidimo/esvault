@@ -65,12 +65,13 @@ const store = {
             if (context.state.user.isOutdated) {
                 await context.dispatch('checkUserState');
             }
-
+            console.log('log test 1');
             if (context.state.user.isAuth === false) {
                 window.location.href = 'example.net';
+                console.log('log test 2');
                 return;
             }
-
+            console.log('log test 3');
             return true;
         },
         async checkForVerifiedUser(context) {
