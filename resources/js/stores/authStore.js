@@ -1,3 +1,5 @@
+import app from "../app";
+
 const store = {
     state: {
         user: {
@@ -67,8 +69,7 @@ const store = {
             }
 
             if (context.state.user.isAuth === false) {
-
-                window.location.replace('https://xvault-app.herokuapp.com/account/login');
+                app.$router.push({name: 'account-login'});
                 return;
             }
 
