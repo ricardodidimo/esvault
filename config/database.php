@@ -64,12 +64,12 @@ return [
         ],
 
         'mysql_testing' => [
-            'driver' => 'mysql',
+            'driver' =>  env('DB_TESTING_CONNECTION', ''),
             'url' => null,
-            'host' => '127.0.0.1',
-            'port' => '3306',
-            'database' => 'podat_test',
-            'username' => 'root',
+            'host' => env('DB_TESTING_HOST', ''),'',
+            'port' => env('DB_TESTING_PORT', ''),
+            'database' => env('DB_TESTING_DATABASE', ''),
+            'username' => env('DB_TESTING_USERNAME', ''),
             'password' => env('DB_TESTING_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
