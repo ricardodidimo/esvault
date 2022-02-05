@@ -67,7 +67,7 @@ const store = {
             }
 
             if (context.state.user.isAuth === false) {
-                window.location.replace("/account/login/");
+                window.location.href = "/account/login/";
                 return;
             }
 
