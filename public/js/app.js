@@ -8948,11 +8948,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app */ "./resources/js/app.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 var store = {
   state: {
@@ -8993,7 +8995,7 @@ var store = {
               case 2:
                 _context.prev = 2;
                 _context.next = 5;
-                return axios.get("/api/account");
+                return axios.get("https://xvault-app.herokuapp.com/api/account");
 
               case 5:
                 response = _context.sent;
@@ -9061,7 +9063,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/credentials/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'credentials-index'
+                });
                 return _context2.abrupt("return");
 
               case 6:
@@ -9095,7 +9099,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/account/login/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'account-login'
+                });
                 return _context3.abrupt("return");
 
               case 6:
@@ -9129,7 +9135,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/account/verify/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'account-verify'
+                });
                 return _context4.abrupt("return");
 
               case 6:
@@ -9163,7 +9171,9 @@ var store = {
                   break;
                 }
 
-                window.location.replace("/credentials/");
+                _app__WEBPACK_IMPORTED_MODULE_1__["default"].$router.push({
+                  name: 'credentials-index'
+                });
                 return _context5.abrupt("return");
 
               case 6:

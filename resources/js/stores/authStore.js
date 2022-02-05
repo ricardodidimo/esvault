@@ -1,3 +1,5 @@
+import app from "../app";
+
 const store = {
     state: {
         user: {
@@ -24,7 +26,8 @@ const store = {
                 return;
             }
             try {
-                const response = await axios.get("/api/account");
+                
+                const response = await axios.get("https://xvault-app.herokuapp.com/api/account");
                 if (response.status === 200) {
                     const retrievedUser = response.data.data;
                     const populateData = {
@@ -56,7 +59,7 @@ const store = {
             }
 
             if (context.state.user.isGuest === false) {
-                window.location.replace("/credentials/");
+                app.$router.push({name: 'credentials-index'});
                 return;
             }
             return true;
@@ -65,13 +68,12 @@ const store = {
             if (context.state.user.isOutdated) {
                 await context.dispatch('checkUserState');
             }
-            console.log('log test 1');
+
             if (context.state.user.isAuth === false) {
-                window.location.href = 'example.net';
-                console.log('log test 2');
+                app.$router.push({name: 'account-login'});
                 return;
             }
-            console.log('log test 3');
+
             return true;
         },
         async checkForVerifiedUser(context) {
@@ -81,7 +83,7 @@ const store = {
             }
 
             if (context.state.user.isVerified === false) {
-                window.location.replace("/account/verify/");
+                app.$router.push({name: 'account-verify'});
                 return;
             }
             return true;
@@ -93,7 +95,7 @@ const store = {
             }
 
             if (context.state.user.isVerified != false) {
-                window.location.replace("/credentials/");
+                app.$router.push({name: 'credentials-index'});
                 return;
             }
             return true;
