@@ -1,5 +1,7 @@
 <h1>xVault: Credential management web client.</h1>
-    <p> 🔓 A study project consisting of a Laravel API & a VueJS frontend </p>
+    <p> 🔓 A study project consisting of a Laravel API & a VueJS frontend. The application is a centralized repository of online website credentials for those who diversify its account access information. </p>
+    <h2>How to test it?</h2>
+    <h3> 🔷 This project is published at Heroku: https://xvault-app.herokuapp.com/ </h3>
     <h2>Tecnologies and techniques</h2>
     <h3> 🔺 This made use of PHP 8 & Laravel 8 along with its conventions and ecosystem</h3>
     <ul>
