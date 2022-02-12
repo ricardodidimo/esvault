@@ -36,7 +36,7 @@
       class="loading__container d-flex justify-content-center align-items-center"
     >
       <div class="loading__box me-3"></div>
-      <p class="px-3">Loading...</p>
+      <p class="px-3">Loading.</p>
     </div>
   </div>
 </template>

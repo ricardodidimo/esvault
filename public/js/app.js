@@ -36830,7 +36830,7 @@ var staticRenderFns = [
         [
           _c("div", { staticClass: "loading__box me-3" }),
           _vm._v(" "),
-          _c("p", { staticClass: "px-3" }, [_vm._v("Loading...")]),
+          _c("p", { staticClass: "px-3" }, [_vm._v("Loading.")]),
         ]
       ),
     ])
