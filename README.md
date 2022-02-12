@@ -1,11 +1,11 @@
-<h1>xVault: Credential management web client.</h1>
+<h1>esvault: Credential management web client.</h1>
     <p> 🔓 A study project consisting of a Laravel API & a VueJS frontend. The application is a centralized repository of online website credentials for those who diversify its account access information. </p>
     <h2>How to test it?</h2>
-    <h3> 🔷 This project is published at Heroku: https://xvault-app.herokuapp.com/ </h3>
+    <h3> 🔷 This project is published at Heroku: https://esvault.herokuapp.com/ </h3>
     <h3> 🔷 You can also run it locally: </h3>
     <ol>
-        <li>In a terminal, run command: "git clone https://github.com/ricardodidimo/xVault.git"</li>
-        <li>Run command: "cd ./xVault" <strong>| Moving to clone folder</strong></li>
+        <li>In a terminal, run command: "git clone https://github.com/ricardodidimo/esvault.git"</li>
+        <li>Run command: "cd ./esvault" <strong>| Moving to clone folder</strong></li>
         <li>Run command: "composer install"  <strong>| installing laravel dependencies</strong></li>
         <li>Run command: "npm instal" <strong>| installing vuejs dependencies</strong></li>
         <li>Run command: "npm run dev" <strong>| building public/vue assets</strong></li>

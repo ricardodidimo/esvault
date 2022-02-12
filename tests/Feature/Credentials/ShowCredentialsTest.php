@@ -6,6 +6,7 @@ use App\Models\Credential;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Tests\TestCase;
 
 class ShowCredentialsTest extends TestCase
@@ -39,7 +40,9 @@ class ShowCredentialsTest extends TestCase
         $res->assertStatus(200);
         $res->assertJsonFragment([
             'title' => $targetCredential->title,
-            'description' => $targetCredential->description
+            'description' => $targetCredential->description,
+            'first_claim' => Crypt::decryptString($targetCredential->first_claim),
+            'second_claim' => Crypt::decryptString($targetCredential->second_claim)
         ]);
     }
 

@@ -17,23 +17,42 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
+    /**
+     * Persist a User record in database and creates an authentication session
+     * for the newly created user.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 201 status for success.
+     */
     public function store(UserCreateRequest $request): JsonResponse
     {
-        $entityData = $request->validated();
-        $this->userService->store($entityData);
+        $safeUserCreationData = $request->validated();
+        $this->userService->store($safeUserCreationData);
 
         $jsonReturn = APIResponse::formatJSONPayload('success', null);
         return response()->json($jsonReturn, 201);
     }
 
+    /**
+     * Updates the current authenticated user record in database.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 204 status for success.
+     */
     public function update(UserUpdateRequest $request): JsonResponse
     {
-        $safeUpdateData = $request->validated();
-        $this->userService->update($safeUpdateData);
+        $safeUserUpdateData = $request->validated();
+        $this->userService->update($safeUserUpdateData);
 
         return response()->json([], 204);
     }
 
+    /**
+     * Destroy the current authenticated user record from database.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 204 status for success.
+     */
     public function destroy(): JsonResponse
     {
         $this->userService->destroy();

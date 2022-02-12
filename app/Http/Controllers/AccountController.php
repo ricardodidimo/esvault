@@ -18,6 +18,12 @@ class AccountController extends Controller
         $this->accountService = $accountService;
     }
 
+    /**
+     * Returns information about the current authenticated user.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with 200 status for success.
+     */
     public function index(): JsonResponse
     {
         $currentUser = $this->accountService->currentUser();
@@ -26,12 +32,24 @@ class AccountController extends Controller
         return response()->json($jsonSuccessReturn, 200);
     }
 
+    /**
+     * Confirms the given password input matches the password for current authenticated user.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 204 status for success.
+     */
     public function confirm(AccountConfirmRequest $request): JsonResponse
     {
         $jsonSuccessReturn = APIResponse::formatJSONPayload('success', null);
         return response()->json($jsonSuccessReturn, 204);
     }
 
+    /**
+     * Creates an authentication session if valid credentials are given.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 201 status for success.
+     */
     public function store(AccountBaseRequest $request): JsonResponse
     {
         $loginAttemptData = $request->validated();
@@ -41,9 +59,17 @@ class AccountController extends Controller
         return response()->json($jsonSuccessReturn, 201);
     }
 
+    /**
+     * Destroy's previously establish session.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with 204 status for success.
+     */
     public function destroy(): JsonResponse
     {
         Auth::guard('web')->logout();
-        return response()->json([], 204);
+
+        $jsonSuccessReturn = APIResponse::formatJSONPayload('success', null);
+        return response()->json($jsonSuccessReturn, 204);
     }
 }
