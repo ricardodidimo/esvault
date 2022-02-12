@@ -17,7 +17,7 @@
     <div class="d-flex logo__container">
       <div class="d-flex logo__text">
         <small class="fs-4">es</small>
-        <h1>vault</h1>
+        <h1>Vault</h1>
       </div>
     </div>
   </div>
