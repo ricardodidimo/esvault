@@ -19,7 +19,7 @@
         <img class="img-fluid" src="/images/logo__github-icon.svg" alt="author github icon" />
       </a>
       <div class="d-flex logo__text">
-        <small class="fs-4">x</small>
+        <small class="fs-4">es</small>
         <h1>Vault</h1>
       </div>
       <a href="https://www.linkedin.com/in/ricardo-didimo-558630209/">
