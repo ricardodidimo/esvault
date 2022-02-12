@@ -14,6 +14,12 @@ class EmailVerifyController extends Controller
 {
     private string $postConfirmationRedirectRoute = "/account/verified";
 
+    /**
+     * Returns current state of email confirmation for the requesting user.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 200 status for success.
+     */
     public function isVerified(Request $request): JsonResponse
     {
         $isVerified = $request->user()->hasVerifiedEmail();
@@ -27,6 +33,12 @@ class EmailVerifyController extends Controller
         );
     }
 
+    /**
+     * Resend email to address attach within requiring user.
+     *
+     * @return JsonResponse A JSON response as defined in App\Helpers\APIResponse
+     * with: 200 status for success.
+     */
     public function resendEmail(EmailVerifyResendRequest $request): JsonResponse
     {
         $request->user()->sendEmailVerificationNotification();
@@ -40,6 +52,11 @@ class EmailVerifyController extends Controller
         );
     }
 
+    /**
+     * Endpoint linked in the verification email. It's responsibility is signalizing email as verified.
+     *
+     * @return RedirectResponse Redirect user back to a front-end route.
+     */
     public function verifyEmail(EmailVerifyBaseRequest $request): RedirectResponse
     {
         if ($request->user()->markEmailAsVerified()) {
