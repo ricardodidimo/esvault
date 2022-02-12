@@ -2,6 +2,7 @@
 
 namespace App\Services\Credential;
 
+use App\Models\Credential;
 use Illuminate\Contracts\Pagination\Paginator;
 
 interface ICredentialService
@@ -19,7 +20,7 @@ interface ICredentialService
     /**
      * Return a credential following presentation necessities
      */
-    public function show(object $credential): object;
+    public function show(Credential $credential): Credential;
 
     /**
      * @throws Exception If insert unexpectly returns false

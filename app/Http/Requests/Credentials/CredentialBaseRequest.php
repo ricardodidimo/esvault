@@ -14,7 +14,7 @@ use Illuminate\Support\MessageBag;
 
 class CredentialBaseRequest extends BaseRequest
 {
-    protected ?object $credentialInstance;
+    protected ?Credential $credentialInstance;
 
     public function getRetrievedCredentialInstance()
     {
@@ -32,9 +32,7 @@ class CredentialBaseRequest extends BaseRequest
             ['id', 'title', 'description', 'first_claim', 'second_claim', 'user_id'] :
             ['id', 'user_id'];
 
-        $this->credentialInstance = DB::table('credentials')->
-            where('id', $givenID)->
-            first($columnsForQuery);
+        $this->credentialInstance = Credential::where('id', $givenID)->first($columnsForQuery);
     }
 
     public function entityExists(): bool
