@@ -5,12 +5,9 @@ namespace App\Services\Credential;
 use App\Models\Credential;
 use Exception;
 use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\Paginator as PaginationPaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\This;
 
 class CredentialService implements ICredentialService
 {
@@ -35,41 +32,41 @@ class CredentialService implements ICredentialService
         $credential['second_claim'] = Crypt::encryptString($credential['second_claim']);
     }
 
-    private function decryptClaims(Paginator &$credentials): void
+    private function decryptClaims(Credential &$credential): void
     {
-        foreach ($credentials as $credential) {
-            $credential->first_claim = Crypt::decryptString($credential->first_claim);
-            $credential->second_claim = Crypt::decryptString($credential->second_claim);
-        }
+        $credential->first_claim = Crypt::decryptString($credential->first_claim);
+        $credential->second_claim = Crypt::decryptString($credential->second_claim);
     }
 
     public function index(): Paginator
     {
         $targetUser = Auth::user()->id;
-        $credentialRecords = DB::table('credentials')
-            ->where('user_id', $targetUser)
+        $credentialRecords = Credential::where('user_id', $targetUser)
             ->simplePaginate($this::RECORDS_PER_PAGE, $this::QUERY_FIELDS);
 
-        $this->decryptClaims($credentialRecords);
+        foreach ($credentialRecords as $credential) {
+            $this->decryptClaims($credential);
+        }
+
         return $credentialRecords;
     }
 
     public function search(string $titleForSearch): Paginator
     {
         $targetUser = Auth::user()->id;
-        $credentialRecordsMatches = DB::table('credentials')
-            ->where('user_id', $targetUser)
+        $credentialRecordsMatches = Credential::where('user_id', $targetUser)
             ->where('title', 'LIKE', "{$titleForSearch}%")
             ->simplePaginate($this::RECORDS_PER_PAGE, $this::QUERY_FIELDS);
 
-        $this->decryptClaims($credentialRecordsMatches);
+        foreach ($credentialRecordsMatches as $credential) {
+            $this->decryptClaims($credential);
+        }
         return $credentialRecordsMatches;
     }
 
-    public function show(object $credential): object
+    public function show(Credential $credential): Credential
     {
-        $paginatedCredential = new PaginationPaginator([$credential], 1);
-        $this->decryptClaims($paginatedCredential);
+        $this->decryptClaims($credential);
         return $credential;
     }
 
