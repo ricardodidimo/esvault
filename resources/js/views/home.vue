@@ -29,7 +29,7 @@
         cards__container
       "
     >
-      <AppCard class="cards__item mx-2" cardTitle="For better protection.">
+      <AppCard class="cards__item mx-2" cardTitle="For better protection">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
         consequatur minima est nihil reprehenderit hic modi quis tenetur,
         laborum mollitia omnis, rem adipisci qui, ad molestiae explicabo eum!
@@ -38,7 +38,7 @@
       <AppCard
         class="cards__item mx-2"
         imageUrl="images/idea-icon.svg"
-        cardTitle="In an easy way."
+        cardTitle="In an easy way"
       >
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
         consequatur minima est nihil reprehenderit hic modi quis tenetur,
@@ -48,7 +48,7 @@
       <AppCard
         class="cards__item mx-2"
         imageUrl="images/lock-icon.svg"
-        cardTitle="In an secure vault."
+        cardTitle="In an secure vault"
       >
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda
         consequatur minima est nihil reprehenderit hic modi quis tenetur,
