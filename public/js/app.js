@@ -38409,7 +38409,7 @@ var render = function () {
             "AppCard",
             {
               staticClass: "cards__item mx-2",
-              attrs: { cardTitle: "For better security" },
+              attrs: { cardTitle: "For better protection" },
             },
             [
               _vm._v(
@@ -38424,7 +38424,7 @@ var render = function () {
               staticClass: "cards__item mx-2",
               attrs: {
                 imageUrl: "images/idea-icon.svg",
-                cardTitle: "For better security",
+                cardTitle: "In an easy way",
               },
             },
             [
@@ -38440,7 +38440,7 @@ var render = function () {
               staticClass: "cards__item mx-2",
               attrs: {
                 imageUrl: "images/lock-icon.svg",
-                cardTitle: "For better security",
+                cardTitle: "In an secure vault",
               },
             },
             [
