@@ -5,6 +5,10 @@
   box-shadow: 0px 3px 3px var(--app-black);
   border-radius: 0rem 0rem 0.5rem 0.5rem;
 }
+.form-body__header > h1 {
+  margin: 0;
+}
+
 input,
 textarea {
   background-color: white;
@@ -32,6 +36,20 @@ textarea:focus {
     "
   >
     <div
+      class="d-flex justify-content-center align-items-center form-body__header"
+    >
+      <img
+        class="img-fluid"
+        width="25px"
+        height="25px"
+        src="/images/lock-icon.svg"
+        alt="ilustrative form head icon"
+      />
+      <h1 class="ms-1 fs-4 text-center">{{headerText}}</h1>
+    </div>
+
+    <hr />
+    <div
       class="
         alert alert-success
         d-flex
@@ -57,6 +75,12 @@ export default {
   components: {
     PrimaryButton,
     LoadingPlaceholder,
+  },
+  props: {
+    headerText: {
+      type: String,
+      default: "Form headline.",
+    },
   },
   data() {
     return {
