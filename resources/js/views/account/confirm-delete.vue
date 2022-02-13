@@ -48,14 +48,12 @@
 import AppCard from "../../components/app-card.vue";
 import AppPrimaryButton from "../../components/app-primary-btn.vue";
 import AppForm from "../../components/app-form-body.vue";
-import AppFormHead from "../../components/app-form-head.vue";
 import AppValidation from "../../components/app-validation.vue";
 
 export default {
   components: {
     AppCard,
     AppPrimaryButton,
-    AppFormHead,
     AppForm,
     AppValidation,
   },

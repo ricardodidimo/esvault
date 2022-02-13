@@ -70,7 +70,6 @@
 </template>
 
 <script>
-import FormHead from "../../components/app-form-head.vue";
 import FormBody from "../../components/app-form-body.vue";
 import AppPrimaryButton from "../../components/app-primary-btn.vue";
 import AppValidation from "../../components/app-validation.vue";
@@ -78,7 +77,6 @@ import AppValidation from "../../components/app-validation.vue";
 export default {
   components: {
     AppPrimaryButton,
-    FormHead,
     FormBody,
     AppValidation,
   },

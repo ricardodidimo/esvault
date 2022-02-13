@@ -76,7 +76,6 @@ h1 {
 </template>
 
 <script>
-import FormHead from "../../components/app-form-head.vue";
 import FormBody from "../../components/app-form-body.vue";
 import AppPrimaryButton from "../../components/app-primary-btn.vue";
 import AccountUpdate from "../../components/account/index/account-update.vue";
@@ -85,7 +84,6 @@ import AccountLogout from "../../components/account/index/account-logout.vue";
 export default {
   components: {
     AppPrimaryButton,
-    FormHead,
     FormBody,
     AccountUpdate,
     AccountLogout

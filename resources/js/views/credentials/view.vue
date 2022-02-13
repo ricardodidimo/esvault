@@ -12,13 +12,11 @@
 </template>
 
 <script>
-import FormHead from "../../components/app-form-head.vue";
 import CredentialViewForm from "../../components/credentials/view/view-form.vue";
 
 export default {
   components: {
-    CredentialViewForm,
-    FormHead,
+    CredentialViewForm
   },
   async mounted() {
     if (
