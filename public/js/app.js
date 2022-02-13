@@ -6449,11 +6449,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      needsClear: false
+    };
+  },
   methods: {
+    clear: function clear() {
+      this.needsClear = false;
+      this.$refs.search.value = '';
+      this.$emit("requireSearch", "/api/credentials");
+    },
     search: function search(formElement) {
       var titleParam = formElement.target.elements[0].value;
-      var searchUrl = titleParam === "" ? "/api/credentials" : "/api/credentials/" + titleParam;
+      var searchUrl = "/api/credentials";
+
+      if (titleParam != "") {
+        searchUrl = "/api/credentials/" + titleParam;
+        this.needsClear = true;
+      } else {
+        this.needsClear = false;
+      }
+
       this.$emit("requireSearch", searchUrl);
     }
   }
@@ -14451,7 +14476,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.search__input[data-v-07006b01] {\n  background-color: unset;\n  border: none;\n  border-bottom: 1px solid black;\n}\n.search__btn[data-v-07006b01] {\n  background-color: black;\n  color: white;\n  border-radius: 0 0.5rem 0.5rem 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.search__input[data-v-07006b01] {\n  background-color: unset;\n  border: none;\n  border-bottom: 1px solid black;\n}\n.search__btn[data-v-07006b01] {\n  background-color: black;\n  color: white;\n  border-radius: 0 0.5rem 0.5rem 0;\n}\n.search__clean-trigger[data-v-07006b01] {\n  color: var(--app-blue);\n  text-decoration: underline;\n  cursor: pointer;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36937,7 +36962,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "d-flex" }, [
     _c(
       "form",
       {
@@ -36951,6 +36976,7 @@ var render = function () {
       },
       [
         _c("input", {
+          ref: "search",
           staticClass: "search__input",
           attrs: { type: "text", placeholder: "Search credential..." },
         }),
@@ -36958,6 +36984,17 @@ var render = function () {
         _vm._m(0),
       ]
     ),
+    _vm._v(" "),
+    _vm.needsClear
+      ? _c(
+          "p",
+          {
+            staticClass: "search__clean-trigger me-2",
+            on: { click: _vm.clear },
+          },
+          [_vm._v("Clear")]
+        )
+      : _vm._e(),
   ])
 }
 var staticRenderFns = [
