@@ -19,7 +19,7 @@ class CredentialService implements ICredentialService
         'second_claim',
         'user_id'
     ];
-    private const RECORDS_PER_PAGE = 8;
+    private const RECORDS_PER_PAGE = 15;
 
     private function setOwnership(array &$credential): void
     {
