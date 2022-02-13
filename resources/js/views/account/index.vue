@@ -52,7 +52,7 @@ h1 {
           ref="updateForm"
         ></AccountUpdate>
 
-        <FormBody class="mb-3 form-body__container">
+        <FormBody headerText="Delete profile" class="mb-3 form-body__container">
           <div
             class="
               d-flex

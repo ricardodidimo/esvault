@@ -5,7 +5,7 @@
 </style>
 
 <template>
-  <FormBody class="mb-3 mx-3" v-on:submiting="updateAccountSubmit">
+  <FormBody headerText="Update profile" class="mb-3 mx-3" v-on:submiting="updateAccountSubmit">
     <div class="form-group mb-2">
       <label for="name">Name</label>
       <input

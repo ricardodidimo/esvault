@@ -21,10 +21,10 @@
     <div
       class="d-flex flex-column justify-content-center align-items-center py-3"
     >
-      <AppCard cardTitle="Delete" class="mb-3">
+      <AppCard cardTitle="Delete account" class="mb-3">
         {{ headText }}
       </AppCard>
-      <AppForm class="form-body__container" v-on:submiting="deleteAccountSubmit">
+      <AppForm headerText="Confirm delete" class="form-body__container" v-on:submiting="deleteAccountSubmit">
         <div class="form-group mb-2">
           <label for="current_password">Type your current password</label>
           <input

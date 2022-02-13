@@ -21,7 +21,7 @@
 </style>
 
 <template>
-  <FormBody v-on:submiting="updateCredentialSubmit" class="mb-3 form-body__container">
+  <FormBody  headerText="Edit credential" v-on:submiting="updateCredentialSubmit" class="mb-3 form-body__container">
     <div class="form-group mb-2">
       <label for="title">Title</label>
       <input

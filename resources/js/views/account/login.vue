@@ -28,10 +28,10 @@
     <div
       class="d-flex flex-column justify-content-center align-items-center pt-3"
     >
-      <FormHead headText="Enter your account" class="mb-4"></FormHead>
       <FormBody
+        headerText="Access your account"
         v-on:submiting="loginUserSubmit"
-        class="mb-3 form-body__container"
+        class="mt-5 mb-3 form-body__container"
       >
         <div class="form-group mb-2">
           <label for="email">Email address</label>

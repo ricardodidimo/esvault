@@ -26,9 +26,7 @@
     <div
       class="d-flex flex-column justify-content-center align-items-center pt-2"
     >
-      <FormHead headText="Create a credential" class="ms-2 mb-3"></FormHead>
-
-      <FormBody v-on:submiting="createCredentialSubmit" class="mb-3" id="formBody">
+      <FormBody headerText="Create a credential" v-on:submiting="createCredentialSubmit" class="my-3" id="formBody">
         <div class="form-group mb-2">
           <label for="title">Title</label>
           <input

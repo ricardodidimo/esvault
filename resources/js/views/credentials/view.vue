@@ -6,8 +6,7 @@
     <div
       class="d-flex flex-column justify-content-center align-items-center pt-2"
     >
-      <FormHead headText="Edit credential" class="ms-2 mb-3"></FormHead>
-      <CredentialViewForm v-on:needs-loading="$emit('needs-loading')"></CredentialViewForm>
+      <CredentialViewForm class="mt-3" v-on:needs-loading="$emit('needs-loading')"></CredentialViewForm>
     </div>
   </div>
 </template>
@@ -44,7 +43,7 @@ export default {
         const response = await axios.get("/api/credentials/" + credentialId);
         if (response.status === 200) {
           const retrievedData = response.data.data;
-          const viewFormComponent = this.$children[1];
+          const viewFormComponent = this.$children[0];
           viewFormComponent.populateCredentialInfo(retrievedData);
         }
       } catch (e) {

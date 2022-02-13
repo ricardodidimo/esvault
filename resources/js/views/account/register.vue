@@ -28,10 +28,10 @@
     <div
       class="d-flex flex-column justify-content-center align-items-center pt-3"
     >
-      <FormHead headText="Create an account" class="mb-4"></FormHead>
       <FormBody
         v-on:submiting="registerUserSubmit"
-        class="mb-3 form-body__container"
+        headerText="Create an account"
+        class="my-3 form-body__container"
       >
         <div class="form-group mb-2">
           <label for="name">Name</label>
