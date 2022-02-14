@@ -21,8 +21,8 @@ class UserService implements IUserService
         $this->hashUserPasswordInput($recordInsertData);
         $user = User::create($recordInsertData);
 
-        event(new Registered($user));
         Auth::login($user);
+        event(new Registered($user));
     }
 
     private function buildUpdatePayload(array $inputRecordData): array
