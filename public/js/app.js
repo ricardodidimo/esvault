@@ -38361,7 +38361,7 @@ var render = function () {
                 "router-link",
                 { attrs: { to: { name: "account-register" } } },
                 [
-                  _c("AppPrimaryButton", { staticClass: "fs-5" }, [
+                  _c("AppPrimaryButton", { staticClass: "fs-5 mx-2 my-2" }, [
                     _vm._v("Get started"),
                   ]),
                 ],
@@ -38372,7 +38372,7 @@ var render = function () {
                 "router-link",
                 { attrs: { to: { name: "account-login" } } },
                 [
-                  _c("AppPrimaryButton", { staticClass: "fs-5" }, [
+                  _c("AppPrimaryButton", { staticClass: "fs-5 mx-2 my-2" }, [
                     _vm._v("Already in"),
                   ]),
                 ],

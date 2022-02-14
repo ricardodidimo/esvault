@@ -53,10 +53,10 @@ footer > p {
       </h1>
       <div>
         <router-link :to="{ name: 'account-register' }">
-          <AppPrimaryButton class="fs-5">Get started</AppPrimaryButton>
+          <AppPrimaryButton class="fs-5 mx-2 my-2">Get started</AppPrimaryButton>
         </router-link>
         <router-link :to="{ name: 'account-login' }">
-          <AppPrimaryButton class="fs-5">Already in</AppPrimaryButton>
+          <AppPrimaryButton class="fs-5 mx-2 my-2">Already in</AppPrimaryButton>
         </router-link>
       </div>
     </main>
