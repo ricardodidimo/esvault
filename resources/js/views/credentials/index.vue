@@ -75,7 +75,6 @@ export default {
       await this.getCredentials(searchForm, actionUrl);
     },
     getCredentials: async function (formComponent, actionUrl = "/api/credentials") {
-      console.log(formComponent);
       formComponent?.setToFetchingState();
       try {
         const response = await axios.get(actionUrl);

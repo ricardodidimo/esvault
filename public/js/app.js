@@ -8526,13 +8526,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context3.prev = _context3.next) {
               case 0:
                 actionUrl = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : "/api/credentials";
-                console.log(formComponent);
                 formComponent === null || formComponent === void 0 ? void 0 : formComponent.setToFetchingState();
-                _context3.prev = 3;
-                _context3.next = 6;
+                _context3.prev = 2;
+                _context3.next = 5;
                 return axios.get(actionUrl);
 
-              case 6:
+              case 5:
                 response = _context3.sent;
 
                 if (response.status === 200) {
@@ -8541,24 +8540,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.nextPage = response.data.data.next_page_url;
                 }
 
-                _context3.next = 12;
+                _context3.next = 11;
                 break;
 
-              case 10:
-                _context3.prev = 10;
-                _context3.t0 = _context3["catch"](3);
+              case 9:
+                _context3.prev = 9;
+                _context3.t0 = _context3["catch"](2);
 
-              case 12:
-                _context3.prev = 12;
+              case 11:
+                _context3.prev = 11;
                 formComponent === null || formComponent === void 0 ? void 0 : formComponent.setToInitialState();
-                return _context3.finish(12);
+                return _context3.finish(11);
 
-              case 15:
+              case 14:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, this, [[3, 10, 12, 15]]);
+        }, _callee3, this, [[2, 9, 11, 14]]);
       }));
 
       function getCredentials(_x3) {
