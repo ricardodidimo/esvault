@@ -5318,6 +5318,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -6048,6 +6056,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -6314,6 +6355,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _credential_row_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./credential-row.vue */ "./resources/js/components/credentials/index/credential-row.vue");
+/* harmony import */ var _app_loading_placeholder_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../app-loading-placeholder.vue */ "./resources/js/components/app-loading-placeholder.vue");
 //
 //
 //
@@ -6339,6 +6381,108 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    CredentialRow: _credential_row_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    AppLoading: _app_loading_placeholder_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      fetching: false
+    };
+  },
+  methods: {
+    navigate: function navigate(action) {
+      var url = action === "getPrevious" ? this.previousPage : this.nextPage;
+      this.$emit(action, this, url);
+    },
+    setToFetchingState: function setToFetchingState() {
+      this.fetching = true;
+    },
+    setToInitialState: function setToInitialState() {
+      this.fetching = false;
+    }
+  },
+  props: {
+    credentials: {
+      type: Array,
+      "default": []
+    },
+    previousPage: {
+      type: String | null,
+      "default": null
+    },
+    nextPage: {
+      type: String | null,
+      "default": null
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/credentials/index/search-box.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/credentials/index/search-box.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _app_loading_placeholder_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../app-loading-placeholder.vue */ "./resources/js/components/app-loading-placeholder.vue");
 //
 //
 //
@@ -6386,87 +6530,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    CredentialRow: _credential_row_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    AppLoading: _app_loading_placeholder_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: {
-    credentials: {
-      type: Array,
-      "default": []
-    },
-    previousPage: {
-      type: String | null,
-      "default": null
-    },
-    nextPage: {
-      type: String | null,
-      "default": null
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/credentials/index/search-box.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/credentials/index/search-box.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      needsClear: false
+      needsClear: false,
+      fetching: false
     };
   },
   methods: {
+    setToFetchingState: function setToFetchingState() {
+      this.fetching = true;
+    },
+    setToInitialState: function setToInitialState() {
+      this.fetching = false;
+    },
     clear: function clear() {
       this.needsClear = false;
       this.$refs.search.value = '';
-      this.$emit("requireSearch", "/api/credentials");
+      this.$emit("requireSearch", this, "/api/credentials");
     },
     search: function search(formElement) {
       var titleParam = formElement.target.elements[0].value;
@@ -6479,7 +6561,7 @@ __webpack_require__.r(__webpack_exports__);
         this.needsClear = false;
       }
 
-      this.$emit("requireSearch", searchUrl);
+      this.$emit("requireSearch", this, searchUrl);
     }
   }
 });
@@ -8411,22 +8493,47 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    getCredentials: function () {
-      var _getCredentials = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var actionUrl,
-            response,
-            _args2 = arguments;
+    searchCredential: function () {
+      var _searchCredential = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(searchForm, actionUrl) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                actionUrl = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : "/api/credentials";
-                _context2.prev = 1;
-                _context2.next = 4;
+                _context2.next = 2;
+                return this.getCredentials(searchForm, actionUrl);
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function searchCredential(_x, _x2) {
+        return _searchCredential.apply(this, arguments);
+      }
+
+      return searchCredential;
+    }(),
+    getCredentials: function () {
+      var _getCredentials = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(formComponent) {
+        var actionUrl,
+            response,
+            _args3 = arguments;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                actionUrl = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : "/api/credentials";
+                console.log(formComponent);
+                formComponent === null || formComponent === void 0 ? void 0 : formComponent.setToFetchingState();
+                _context3.prev = 3;
+                _context3.next = 6;
                 return axios.get(actionUrl);
 
-              case 4:
-                response = _context2.sent;
+              case 6:
+                response = _context3.sent;
 
                 if (response.status === 200) {
                   this.credentials = response.data.data.data;
@@ -8434,22 +8541,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.nextPage = response.data.data.next_page_url;
                 }
 
-                _context2.next = 10;
+                _context3.next = 12;
                 break;
 
-              case 8:
-                _context2.prev = 8;
-                _context2.t0 = _context2["catch"](1);
-
               case 10:
+                _context3.prev = 10;
+                _context3.t0 = _context3["catch"](3);
+
+              case 12:
+                _context3.prev = 12;
+                formComponent === null || formComponent === void 0 ? void 0 : formComponent.setToInitialState();
+                return _context3.finish(12);
+
+              case 15:
               case "end":
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this, [[1, 8]]);
+        }, _callee3, this, [[3, 10, 12, 15]]);
       }));
 
-      function getCredentials() {
+      function getCredentials(_x3) {
         return _getCredentials.apply(this, arguments);
       }
 
@@ -14236,7 +14348,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n:root {\n  --app-black: #001d29;\n  --app-blue: #00597e;\n  --app-orange: #ee863b;\n  --app-text-font: \"Roboto\", sans-serif;\n  --app-action-font: \"Anton\", sans-serif;\n}\nbody {\n  background-color: #f3f3f3;\n  font-family: var(--app-text-font);\n}\na {\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer;\n}\na:hover {\n  color: var(--app-blue);\n}\np {\n  margin: 0;\n}\nbutton {\n  border: none;\n}\n.loading__container--page {\n  height: 100vh;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n:root {\n  --app-black: #001d29;\n  --app-blue: #00597e;\n  --app-orange: #ee863b;\n  --app-text-font: \"Roboto\", sans-serif;\n  --app-action-font: \"Anton\", sans-serif;\n}\nbody {\n  background-color: #f3f3f3;\n  font-family: var(--app-text-font);\n}\na {\n  color: inherit;\n  text-decoration: none;\n  cursor: pointer;\n}\na:hover {\n  color: var(--app-blue);\n}\np {\n  margin: 0;\n}\nbutton {\n  border: none;\n}\n.loading__container--page {\n  height: 100vh;\n}\n.loading__container--page > p {\n  color: var(--app-blue);\n  letter-spacing: 3px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14356,7 +14468,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.loading__container[data-v-2da9ed8a]{\n  color: var(--app-blue);\n  font-family: var(--app-action-font);\n}\n.loading__box[data-v-2da9ed8a] {\n  width: 30px;\n  height: 30px;\n  -webkit-animation: example-data-v-2da9ed8a 3s infinite;\n          animation: example-data-v-2da9ed8a 3s infinite;\n  background-color: var(--app-blue);\n  border-radius: 10%;\n}\n@-webkit-keyframes example-data-v-2da9ed8a {\n0% {\n    transform: rotate(20deg);\n}\n25% {\n    transform: rotate(45deg);\n}\n50% {\n    transform: rotate(90deg);\n}\n75% {\n    transform: rotate(-120deg);\n}\n100% {\n    transform: rotate(20deg);\n}\n}\n@keyframes example-data-v-2da9ed8a {\n0% {\n    transform: rotate(20deg);\n}\n25% {\n    transform: rotate(45deg);\n}\n50% {\n    transform: rotate(90deg);\n}\n75% {\n    transform: rotate(-120deg);\n}\n100% {\n    transform: rotate(20deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.loader-1[data-v-2da9ed8a] {\n\theight: 16px;\n\twidth: 16px;\n\t-webkit-animation: loader-1-1-data-v-2da9ed8a 4.8s linear infinite;\n\t        animation: loader-1-1-data-v-2da9ed8a 4.8s linear infinite;\n}\n@-webkit-keyframes loader-1-1-data-v-2da9ed8a {\n0%   { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(360deg);\n}\n}\n@keyframes loader-1-1-data-v-2da9ed8a {\n0%   { transform: rotate(0deg);\n}\n100% { transform: rotate(360deg);\n}\n}\n.loader-1 span[data-v-2da9ed8a] {\n\tdisplay: block;\n\tposition: absolute;\n\ttop: 0; left: 0;\n\tbottom: 0; right: 0;\n\tmargin: auto;\n\theight: 16px;\n\twidth: 16px;\n\tclip: rect(0, 16px, 16px, 8px);\n\t-webkit-animation: loader-1-2-data-v-2da9ed8a 1.2s linear infinite;\n\t        animation: loader-1-2-data-v-2da9ed8a 1.2s linear infinite;\n}\n@-webkit-keyframes loader-1-2-data-v-2da9ed8a {\n0%   { -webkit-transform: rotate(0deg);\n}\n100% { -webkit-transform: rotate(220deg);\n}\n}\n@keyframes loader-1-2-data-v-2da9ed8a {\n0%   { transform: rotate(0deg);\n}\n100% { transform: rotate(220deg);\n}\n}\n.loader-1 span[data-v-2da9ed8a]::after {\n\tcontent: \"\";\n\tposition: absolute;\n\ttop: 0; left: 0;\n\tbottom: 0; right: 0;\n\tmargin: auto;\n\theight: 16px;\n\twidth: 16px;\n\tclip: rect(0, 16px, 16px, 8px);\n\tborder: 3px solid var(--app-blue);\n\tborder-radius: 50%;\n\t-webkit-animation: loader-1-3-data-v-2da9ed8a 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;\n\t        animation: loader-1-3-data-v-2da9ed8a 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;\n}\n@-webkit-keyframes loader-1-3-data-v-2da9ed8a {\n0%   { -webkit-transform: rotate(-140deg);\n}\n50%  { -webkit-transform: rotate(-160deg);\n}\n100% { -webkit-transform: rotate(140deg);\n}\n}\n@keyframes loader-1-3-data-v-2da9ed8a {\n0%   { transform: rotate(-140deg);\n}\n50%  { transform: rotate(-160deg);\n}\n100% { transform: rotate(140deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14476,7 +14588,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.search__input[data-v-07006b01] {\n  background-color: unset;\n  border: none;\n  border-bottom: 1px solid black;\n}\n.search__btn[data-v-07006b01] {\n  background-color: black;\n  color: white;\n  border-radius: 0 0.5rem 0.5rem 0;\n}\n.search__clean-trigger[data-v-07006b01] {\n  color: var(--app-blue);\n  text-decoration: underline;\n  cursor: pointer;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.search__input[data-v-07006b01] {\n  background-color: unset;\n  border: none;\n  border-bottom: 1px solid black;\n}\n.search__btn[data-v-07006b01] {\n  background-color: black;\n  color: white;\n  border-radius: 0 0.5rem 0.5rem 0;\n}\n.search__clean-trigger[data-v-07006b01] {\n  color: var(--app-blue);\n  text-decoration: underline;\n  cursor: pointer;\n}\n.search__loading[data-v-07006b01] {\n  width: 20px;\n  height: 20px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36099,7 +36211,11 @@ var render = function () {
             staticClass:
               "\n      loading__container--page\n      d-flex\n      justify-content-center\n      align-items-center\n    ",
           },
-          [_c("LoadingPlaceholder")],
+          [
+            _c("LoadingPlaceholder"),
+            _vm._v(" "),
+            _c("p", { staticClass: "px-3" }, [_vm._v("Loading...")]),
+          ],
           1
         )
       : _vm._e(),
@@ -36636,11 +36752,7 @@ var staticRenderFns = [
           staticClass:
             "loading__container d-flex justify-content-center align-items-center",
         },
-        [
-          _c("div", { staticClass: "loading__box me-3" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "px-3" }, [_vm._v("Loading...")]),
-        ]
+        [_c("div", { staticClass: "loader-1 center" }, [_c("span")])]
       ),
     ])
   },
@@ -36861,37 +36973,46 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w-100" }, [
-    _c("div", { staticClass: "d-flex list__navigation-container" }, [
-      _c(
-        "p",
-        {
-          staticClass: "px-2 list__navigation",
-          class: { "list__navigation--active": _vm.previousPage },
-          on: {
-            click: function ($event) {
-              return _vm.$emit("getPrevious")
+    _c(
+      "div",
+      { staticClass: "d-flex list__navigation-container" },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "px-2 list__navigation",
+            class: { "list__navigation--active": _vm.previousPage },
+            on: {
+              click: function ($event) {
+                return _vm.navigate("getPrevious")
+              },
             },
           },
-        },
-        [_vm._v("\n      previous\n    ")]
-      ),
-      _vm._v(" "),
-      _c("p", { staticClass: "mx-2" }, [_vm._v("|")]),
-      _vm._v(" "),
-      _c(
-        "p",
-        {
-          staticClass: "list__navigation",
-          class: { "list__navigation--active": _vm.nextPage },
-          on: {
-            click: function ($event) {
-              return _vm.$emit("getNext")
+          [_vm._v("\n      previous\n    ")]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "mx-2" }, [_vm._v("|")]),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticClass: "list__navigation",
+            class: { "list__navigation--active": _vm.nextPage },
+            on: {
+              click: function ($event) {
+                return _vm.navigate("getNext")
+              },
             },
           },
-        },
-        [_vm._v("\n      next\n    ")]
-      ),
-    ]),
+          [_vm._v("\n      next\n    ")]
+        ),
+        _vm._v(" "),
+        _vm.fetching
+          ? _c("AppLoading", { staticClass: "search__loading mx-2 mt-1" })
+          : _vm._e(),
+      ],
+      1
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "table-responsive" }, [
       _c(
@@ -36962,40 +37083,49 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex" }, [
-    _c(
-      "form",
-      {
-        staticClass: "px-2",
-        on: {
-          submit: function ($event) {
-            $event.preventDefault()
-            return _vm.search.apply(null, arguments)
+  return _c(
+    "div",
+    { staticClass: "d-flex" },
+    [
+      _c(
+        "form",
+        {
+          staticClass: "px-2",
+          on: {
+            submit: function ($event) {
+              $event.preventDefault()
+              return _vm.search.apply(null, arguments)
+            },
           },
         },
-      },
-      [
-        _c("input", {
-          ref: "search",
-          staticClass: "search__input",
-          attrs: { type: "text", placeholder: "Search credential..." },
-        }),
-        _vm._v(" "),
-        _vm._m(0),
-      ]
-    ),
-    _vm._v(" "),
-    _vm.needsClear
-      ? _c(
-          "p",
-          {
-            staticClass: "search__clean-trigger me-2",
-            on: { click: _vm.clear },
-          },
-          [_vm._v("Clear")]
-        )
-      : _vm._e(),
-  ])
+        [
+          _c("input", {
+            ref: "search",
+            staticClass: "search__input",
+            attrs: { type: "text", placeholder: "Search credential..." },
+          }),
+          _vm._v(" "),
+          _vm._m(0),
+        ]
+      ),
+      _vm._v(" "),
+      _vm.fetching
+        ? _c("AppLoading", { staticClass: "search__loading me-2" })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.needsClear
+        ? _c(
+            "p",
+            {
+              staticClass: "search__clean-trigger me-2",
+              on: { click: _vm.clear },
+            },
+            [_vm._v("Clear")]
+          )
+        : _vm._e(),
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function () {
@@ -38095,7 +38225,7 @@ var render = function () {
           "div",
           { staticClass: "d-flex justify-content-start w-100" },
           [
-            _c("SearchBox", { on: { requireSearch: _vm.getCredentials } }),
+            _c("SearchBox", { on: { requireSearch: _vm.searchCredential } }),
             _vm._v(" "),
             _c(
               "router-link",
@@ -38125,14 +38255,7 @@ var render = function () {
             previousPage: _vm.previousPage,
             nextPage: _vm.nextPage,
           },
-          on: {
-            getPrevious: function ($event) {
-              return _vm.getCredentials(_vm.previousPage)
-            },
-            getNext: function ($event) {
-              return _vm.getCredentials(_vm.nextPage)
-            },
-          },
+          on: { getPrevious: _vm.getCredentials, getNext: _vm.getCredentials },
         }),
       ],
       1

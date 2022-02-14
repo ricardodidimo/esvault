@@ -32,7 +32,14 @@ button {
 }
 .loading__container--page {
   height: 100vh;
+
 }
+
+.loading__container--page > p {
+  color: var(--app-blue);
+  letter-spacing: 3px;
+}
+
 </style>
 
 <template>
@@ -47,6 +54,7 @@ button {
       "
     >
       <LoadingPlaceholder></LoadingPlaceholder>
+      <p class="px-3">Loading...</p>
     </div>
     <div v-show="componentReady">
       <AppHeader></AppHeader>
