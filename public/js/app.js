@@ -14566,7 +14566,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nthead[data-v-00cf18ea] {\n  background-color: white;\n  box-shadow: 0px 3px 3px var(--app-black);\n  border-radius: 0.5rem;\n}\ntbody[data-v-00cf18ea] {\n  border-top: 1.1px solid !important;\n  border-color: var(--app-black) !important;\n}\ntd[data-v-00cf18ea] {\n  width: 20%;\n}\ntr[data-v-00cf18ea] {\n  text-align: center;\n  vertical-align: middle;\n}\n.list__navigation[data-v-00cf18ea] {\n  opacity: 0.5;\n  cursor: initial;\n  text-decoration: none;\n}\n.list__navigation-container[data-v-00cf18ea] {\n  color: var(--app-blue);\n}\n.list__navigation--active[data-v-00cf18ea] {\n  opacity: 1;\n  cursor: pointer;\n  text-decoration: underline;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nthead[data-v-00cf18ea] {\n  background-color: white;\n  box-shadow: 0px 3px 3px var(--app-black);\n  border-radius: 0.5rem;\n}\ntbody[data-v-00cf18ea] {\n  border-top: 1px solid !important;\n  border-color: var(--app-black) !important;\n}\ntd[data-v-00cf18ea] {\n  width: 20%;\n}\ntr[data-v-00cf18ea] {\n  text-align: center;\n  vertical-align: middle;\n}\n.list__navigation[data-v-00cf18ea] {\n  opacity: 0.5;\n  cursor: initial;\n  text-decoration: none;\n}\n.list__navigation-container[data-v-00cf18ea] {\n  color: var(--app-blue);\n}\n.list__navigation--active[data-v-00cf18ea] {\n  opacity: 1;\n  cursor: pointer;\n  text-decoration: underline;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

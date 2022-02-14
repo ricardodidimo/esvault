@@ -5,7 +5,7 @@ thead {
   border-radius: 0.5rem;
 }
 tbody {
-  border-top: 1.1px solid !important;
+  border-top: 1px solid !important;
   border-color: var(--app-black) !important;
 }
 td {
