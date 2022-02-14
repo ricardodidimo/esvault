@@ -81,6 +81,20 @@ class RegisterTest extends TestCase
     /**
      * @test
      */
+    public function Register_OnSuccessfulCall_CreateSampleCredentialRecord()
+    {
+        $this->post(route('user.register'), $this->payload);
+
+        $this->assertDatabaseCount('credentials', 1);
+        $this->assertDatabaseHas('credentials', [
+            'title' => 'example website',
+            'description' => 'This is a sample credential record'
+        ]);
+    }
+
+    /**
+     * @test
+     */
     public function Register_OnCallFromAuthenticatedUser_ReturnsFailureResponse()
     {
         /** @var Authenticatable $user */
