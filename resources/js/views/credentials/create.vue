@@ -33,6 +33,7 @@
             type="text"
             class="form-control"
             id="title"
+            placeholder="(e.g. website name)"
             name="title"
             aria-describedby="title"
           />
@@ -46,6 +47,7 @@
             type="text"
             class="form-control"
             id="first_claim"
+            placeholder="(e.g. username or email)"
             name="first_claim"
             aria-describedby="first_claim"
             autocomplete="on"
@@ -60,6 +62,7 @@
             type="password"
             class="form-control"
             id="second_claim"
+            placeholder="(e.g. password)"
             name="second_claim"
             aria-describedby="second_claim"
             autocomplete="on"

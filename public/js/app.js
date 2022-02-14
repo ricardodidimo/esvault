@@ -8216,6 +8216,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 
@@ -38059,6 +38062,7 @@ var render = function () {
                   attrs: {
                     type: "text",
                     id: "title",
+                    placeholder: "(e.g. website name)",
                     name: "title",
                     "aria-describedby": "title",
                   },
@@ -38084,6 +38088,7 @@ var render = function () {
                   attrs: {
                     type: "text",
                     id: "first_claim",
+                    placeholder: "(e.g. username or email)",
                     name: "first_claim",
                     "aria-describedby": "first_claim",
                     autocomplete: "on",
@@ -38112,6 +38117,7 @@ var render = function () {
                   attrs: {
                     type: "password",
                     id: "second_claim",
+                    placeholder: "(e.g. password)",
                     name: "second_claim",
                     "aria-describedby": "second_claim",
                     autocomplete: "on",
