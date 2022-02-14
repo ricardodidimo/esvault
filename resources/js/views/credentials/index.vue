@@ -19,7 +19,7 @@
       "
     >
       <div class="d-flex justify-content-start w-100">
-        <SearchBox v-on:requireSearch="getCredentials"></SearchBox>
+        <SearchBox v-on:requireSearch="searchCredential"></SearchBox>
         <router-link
           :to="{ name: 'credentials-create' }"
           class="add-btn d-flex justify-content-center align-items-center px-2"
@@ -32,8 +32,8 @@
         :credentials="credentials"
         :previousPage="previousPage"
         :nextPage="nextPage"
-        v-on:getPrevious="getCredentials(previousPage)"
-        v-on:getNext="getCredentials(nextPage)"
+        v-on:getPrevious="getCredentials"
+        v-on:getNext="getCredentials"
       ></CredentialsList>
     </div>
   </div>
@@ -71,7 +71,12 @@ export default {
     this.$emit("component-ready");
   },
   methods: {
-    getCredentials: async function (actionUrl = "/api/credentials") {
+    searchCredential: async function (searchForm, actionUrl) {
+      await this.getCredentials(searchForm, actionUrl);
+    },
+    getCredentials: async function (formComponent, actionUrl = "/api/credentials") {
+      console.log(formComponent);
+      formComponent?.setToFetchingState();
       try {
         const response = await axios.get(actionUrl);
         if (response.status === 200) {
@@ -79,7 +84,10 @@ export default {
           this.previousPage = response.data.data.prev_page_url;
           this.nextPage = response.data.data.next_page_url;
         }
-      } catch (e) {}
+      } catch (e) {
+      } finally {
+        formComponent?.setToInitialState();
+      }
     },
   },
 };

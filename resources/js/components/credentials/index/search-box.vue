@@ -14,6 +14,10 @@
   text-decoration: underline;
   cursor: pointer;
 }
+.search__loading {
+  width: 20px;
+  height: 20px;
+}
 </style>
 <template>
   <div class="d-flex">
@@ -33,22 +37,35 @@
         />
       </button>
     </form>
+    <AppLoading class="search__loading me-2" v-if="fetching"></AppLoading>
     <p class="search__clean-trigger me-2" v-if="needsClear" v-on:click="clear">Clear</p>
   </div>
 </template>
 
 <script>
+import AppLoading from "../../app-loading-placeholder.vue";
+
 export default {
+  components: {
+    AppLoading
+  },
   data() {
     return {
-      needsClear: false
+      needsClear: false,
+      fetching: false
     }
   },
   methods: {
+    setToFetchingState: function () {
+      this.fetching = true;
+    },
+    setToInitialState: function () {
+      this.fetching = false;
+    },
     clear: function () {
       this.needsClear = false;
       this.$refs.search.value = '';
-      this.$emit("requireSearch", "/api/credentials");
+      this.$emit("requireSearch", this, "/api/credentials");
     },
     search: function (formElement) {
       const titleParam = formElement.target.elements[0].value;
@@ -61,7 +78,7 @@ export default {
         this.needsClear = false;
       }
 
-      this.$emit("requireSearch", searchUrl);
+      this.$emit("requireSearch", this, searchUrl);
     },
   },
 };
