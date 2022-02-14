@@ -55,17 +55,17 @@ class ListCredentialsTest extends TestCase
      */
     public function CredentialIndex_OnSuccessfulCall_ReturnsPaginatedResults()
     {
-        $credentials = Credential::factory()->count(9)->create();
+        $credentials = Credential::factory()->count(31)->create();
 
         $res = $this->get(route('credentials.index'));
 
-        $this->assertDatabaseCount('credentials', 9);
+        $this->assertDatabaseCount('credentials', 31);
         /**
          * data key references pagination details
          * data.data references actual APIResponse data
          */
-        $res->assertJsonCount(8, 'data.data');
-        $res->assertJsonFragment(['per_page' => 8]);
+        $res->assertJsonCount(30, 'data.data');
+        $res->assertJsonFragment(['per_page' => 30]);
     }
 
     /**
