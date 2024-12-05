@@ -1,8 +1,7 @@
 <h1>esvault: Credential management web client.</h1>
     <p> 🔓 A study project consisting of a Laravel API & a VueJS frontend. The application is a centralized repository of online website credentials for those who diversify its account access information. </p>
     <h2>How to test it?</h2>
-    <h3> 🔷 This project is published at Heroku: https://esvault-app.herokuapp.com/ </h3>
-    <h3> 🔷 You can also run it locally: </h3>
+    <h3> 🔷 You can run it locally: </h3>
     <ol>
         <li>In a terminal, run command: "git clone https://github.com/ricardodidimo/esvault.git"</li>
         <li>Run command: "cd ./esvault" <strong>| Moving to clone folder</strong></li>
